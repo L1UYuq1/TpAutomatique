@@ -1,0 +1,18 @@
+data = importdata('trajectory_data.txt',',');
+size(data);
+%第一列的数据是序列号 ， 第二列到第四列 xyz， 第五列 时间
+Pxw = data(:,2);
+Pyw = data(:,3);
+z = data(:,4);
+t = data(:,5);
+
+plot(x,y)
+xlabel('X')
+ylabel('Y')
+legend('Trajectoire')
+
+delta = 0.04;
+plage = 0.3;
+tol = 0.005;
+
+Rw = [cos(delta),sin(delta);-sin(delta),cos(delta)];
